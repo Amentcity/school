@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <!--
+          第一种方式映入外部bean
+            1.创建两个类对象dept和emp
+            2.在emp的bean标签里面，使用property引入dept的bean
+        -->
+        <bean id="dept" class="com.java.ditest.Department">
+            <property name="name" value="安保部"/>
+        </bean>
+        <bean id="emp" class="com.java.ditest.Employee">
+            <!--普通属性注入-->
+            <property name="name" value="Lucy"/>
+            <property name="age" value="20"/>
+            <!--注入对象类型属性-->
+            <property name="department" ref="dept"/>
+        </bean>
+        <bean id="emp1" class="com.java.ditest.Employee">
+            <property name="name" value="Mary"/>
+            <property name="age" value="20"/>
+            <!--内部bean方式-->
+            <property name="department">
+                <bean id="dept1" class="com.java.ditest.Department">
+                    <property name="name" value="财务部"/>
+                </bean>
+            </property>
+        </bean>
+        <!--第三种方式 级联赋值-->
+        <bean id="dept2" class="com.java.ditest.Department">
+            <property name="name" value="技术部"/>
+        </bean>
+        <bean id="emp2" class="com.java.ditest.Employee">
+            <property name="name" value="Tom"/>
+            <property name="age" value="30"/>
+            <property name="department" ref="dept2"/>
+            <property name="department.name" value="测试部"/>
+        </bean>
+</beans>

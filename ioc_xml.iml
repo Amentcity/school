@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset" name="Bean" removed="false">
+          <file>file://$MODULE_DIR$/ssm/ioc_xml/src/main/resources/bean.xml</file>
+        </fileset>
+        <fileset id="fileset2" name="DataSource" removed="false">
+          <file>file://$MODULE_DIR$/ssm/ioc_xml/src/main/resources/dataSource.xml</file>
+        </fileset>
+        <fileset id="fileset3" name="Scope" removed="false">
+          <file>file://$MODULE_DIR$/ssm/ioc_xml/src/main/resources/scope.xml</file>
+        </fileset>
+        <fileset id="fileset4" name="Lifecycle" removed="false">
+          <file>file://$MODULE_DIR$/ssm/ioc_xml/src/main/resources/lifecycle.xml</file>
+        </fileset>
+        <fileset id="fileset5" name="Factory" removed="false">
+          <file>file://$MODULE_DIR$/ssm/ioc_xml/src/main/resources/factory.xml</file>
+        </fileset>
+        <fileset id="fileset6" name="AutoWrite" removed="false">
+          <file>file://$MODULE_DIR$/ssm/ioc_xml/src/main/resources/autoWrite.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
+  </component>
+</module>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java.mapper.UserMapper">
+    <!--
+        Mybatis获取参数值的两种方式：#{}和${}
+        #{}的本质是占位符赋值。${}的本质是字符串拼接
+        若mapper接口参数值的参数为单个自变量类型
+        此时可以通过#{}和${}以任意的内容获取参数值，一定要注意${}的单引号问题
+    -->
+    <select id="getUserByUserName">
+<!--        select * from t_user where username='${username}';-->
+        select * from t_user where username=#{username};
+    </select>
+    <select id="checkLogin">
+<!--        select  * from t_user where username=#{arg0} and password=#{arg1};-->
+        select * from t_user where username='${arg0}' and password='${arg1} ';
+    </select>
+    <select id="checkLoginByMap">
+        select * from t_user where username=#{username} and password=#{password};
+    </select>
+    <insert id="insertUser">
+        insert into t_user values(null,#{username},#{password},#{age},#{gender},#{email});
+    </insert>
+    <select id="checkLoginByParam">
+        select * from t_user where username=#{username} and password=#{password};
+    </select>
+</mapper>

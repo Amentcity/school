@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--
+        1.创建两个对象
+        2.注入普通类型属性
+        3.在学生bean注入map集合属性
+    -->
+    <bean id="teacher" class="com.java.map.Teacher">
+        <!--注入普通类型属性-->
+        <property name="id" value="100"/>
+        <property name="name" value="张庆敏"/>
+    </bean>
+    <bean id="teacher1" class="com.java.map.Teacher">
+        <!--注入普通类型属性-->
+        <property name="id" value="101"/>
+        <property name="name" value="郝涛"/>
+    </bean>
+    <bean id="student" class="com.java.map.Student">
+        <!--注入普通类型属性-->
+        <property name="id" value="2001"/>
+        <property name="name" value="张三"/>
+        <!--在学生bean注入map集合属性-->
+        <property name="teacherMap">
+            <map>
+                <entry>
+                    <key>
+                        <value>1000</value>
+                    </key>
+                    <ref bean="teacher"/>
+                </entry>
+                <entry>
+                    <key>
+                        <value>1001</value>
+                    </key>
+                    <ref bean="teacher1"/>
+                </entry>
+            </map>
+        </property>
+    </bean>
+</beans>

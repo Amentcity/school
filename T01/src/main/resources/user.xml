@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java.mapper.MootMapper">
+    <select id="selectAll" resultType="com.java.entity.Entity">
+        select * from tab_course;
+    </select>
+    <resultMap id="EntityMap" type="com.java.entity.Entity">
+<!--        数据库中的字段名称column=""  property=""类中成员属性名称-->
+        <id column="" property=""></id>  <!--主键-->
+        <result column="" property=""></result>
+    </resultMap>
+<!--  定义数据库中字段名称与类中成员属性名称关联映射-->
+    <select id="a" resultMap="EntityMap">
+
+    </select>
+
+    <select id="getById" parameterType="int" resultType="com.java.entity.Entity">
+        select * from tab_course where CourseID=#{id};
+    </select>
+
+    <insert id="insertMoot" parameterType="com.java.entity.Entity" >
+        INSERT INTO `tab_course` (`CourseID`, `CourseName`, `Teacher`, `Chapter`, `Period`, `isFee`, `Intro`) VALUES (null, #{CourseName}, #{Teacher}, #{Chapter}, #{Period}, #{isFee}, #{Intro});
+    </insert>
+
+    <update id="updateMoot" parameterType="com.java.entity.Entity">
+        UPDATE `moot`.`tab_course` SET `CourseName` = #{CourseName}, `Teacher` = #{Teacher}, `Chapter` = #{Chapter}, `Period` = #{Period}, `isFee` = #{isFee}, `Intro` = #{Intro} WHERE `CourseID` = #{CourseID};
+    </update>
+
+    <delete id="deleteMoot" parameterType="int">
+        delete from tab_course where CourseID=#{id};
+    </delete>
+    <select id="getByIdMap" resultType="com.java.entity.Entity">
+        select * from tab_course where Teacher=#{Teacher} and Chapter=#{Chapter} and isFee=#{isFee};
+    </select>
+    <select id="getByParam" resultType="com.java.entity.Entity">
+        select * from tab_course where Teacher=#{Teacher} and Chapter=#{Chapter} and isFee=#{isFee};
+    </select>
+    <select id="getByPojo" parameterType="com.java.entity.Entity" resultType="com.java.entity.Entity">
+        select *
+        from tab_course
+        where
+            1=1
+            <if test = "Teacher!=null and Teacher!=''">
+                and Teacher=#{Teacher}
+            </if>
+            <if test="Chapter!=null and Chapter!=''">
+                and Chapter=#{Chapter}
+            </if>
+            <if test="isFee!=null and isFee!=''">
+                and isFee=#{isFee};
+            </if>
+    </select>
+    <select id="getByWhere" parameterType="com.java.entity.Entity" resultType="com.java.entity.Entity">
+        select * from tab_course
+        <where>
+            <if test = "Teacher!=null and Teacher!=''">
+                Teacher=#{Teacher}
+            </if>
+            <if test="Chapter!=null and Chapter!=''">
+                and Chapter=#{Chapter}
+            </if>
+            <if test="isFee!=null and isFee!=''">
+                and isFee=#{isFee};
+            </if>
+        </where>
+    </select>
+</mapper>

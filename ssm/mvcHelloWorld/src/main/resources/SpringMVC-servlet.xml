@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <context:component-scan base-package="com.java.controller"/>
+    <!-- springmvc集成thymeleaf开始 -->
+    <bean id="templateResolver" class="org.thymeleaf.spring6.templateresolver.SpringResourceTemplateResolver">
+        <property name="prefix" value="/WEB-INF/templates/"/>
+        <property name="suffix" value=".html"/>
+        <property name="templateMode" value="HTML5"/>
+    </bean>
+
+    <bean id="templateEngine" class="org.thymeleaf.spring6.SpringTemplateEngine">
+        <property name="templateResolver" ref="templateResolver"/>
+    </bean>
+
+    <bean id="thymeleafViewResolver" class="org.thymeleaf.spring6.view.ThymeleafViewResolver">
+        <property name="order" value="1"/>
+        <property name="characterEncoding" value="UTF-8"/>
+        <property name="templateEngine" ref="templateEngine"/>
+    </bean>
+    <!-- springmvc集成thymeleaf结束 -->
+<!--    &lt;!&ndash; 配置 Thymeleaf 视图解析器 &ndash;&gt;-->
+<!--    <bean id="viewResolver"-->
+<!--          class="org.thymeleaf.spring4.view.ThymeleafViewResolver">-->
+<!--        &lt;!&ndash;定义视图解析器的优先级，order 值越小，优先级越高&ndash;&gt;-->
+<!--        <property name="order" value="1"/>-->
+<!--        &lt;!&ndash;定义视图文件的字符集&ndash;&gt;-->
+<!--        <property name="characterEncoding" value="UTF-8"/>-->
+<!--        <property name="templateEngine">-->
+<!--            <bean class="org.thymeleaf.spring4.SpringTemplateEngine">-->
+<!--                <property name="templateResolver">-->
+<!--                    <bean class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">-->
+<!--                        &lt;!&ndash; 视图前缀 &ndash;&gt;-->
+<!--                        <property name="prefix" value="/WEB-INF/templates/"/>-->
+<!--                        &lt;!&ndash; 视图后缀 &ndash;&gt;-->
+<!--                        <property name="suffix" value=".html"/>-->
+<!--                        <property name="templateMode" value="html5"/>-->
+<!--                        <property name="characterEncoding" value="UTF-8"/>-->
+<!--                    </bean>-->
+<!--                </property>-->
+<!--            </bean>-->
+<!--        </property>-->
+<!--    </bean>-->
+</beans>

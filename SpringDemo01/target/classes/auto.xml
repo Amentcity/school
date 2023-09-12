@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 根据类型自动装配-->
+<!--    <bean id="userConnection" class="com.java.auto.connection.UserConnection" autowire="byType"/>-->
+<!--    <bean id="userService" class="com.java.auto.service.UserServiceImpl" autowire="byType"/>-->
+<!--    <bean id="userDao" class="com.java.auto.dao.UserDaoImpl"/>-->
+    <!-- 根据名称自动装配-->
+    <!-- ID名要和属性名一致 -->
+    <bean id="userConnection" class="com.java.auto.connection.UserConnection" autowire="byName"/>
+    <bean id="userService" class="com.java.auto.service.UserServiceImpl" autowire="byName"/>
+    <bean id="userDao" class="com.java.auto.dao.UserDaoImpl"/>
+</beans>
+

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util  http://www.springframework.org/schema/util/spring-util.xsd">
+    <!--
+        1.创建三个对象
+        2.注入普通类型属性
+        3.使用util：类型 定义
+        4.在学生bean引入util:定义类型bean，完成list，map类型属性注入
+    -->
+    <bean id="lesson" class="com.java.map.Lesson">
+        <property name="lessonName" value="Java面向对象"/>
+    </bean>
+    <bean id="lesson1" class="com.java.map.Lesson">
+        <property name="lessonName" value="Java web网页设计"/>
+    </bean>
+    <bean id="teacher" class="com.java.map.Teacher">
+        <property name="id" value="1001"/>
+        <property name="name" value="张庆敏"/>
+    </bean>
+    <bean id="teacher1" class="com.java.map.Teacher">
+        <property name="id" value="1002"/>
+        <property name="name" value="郝涛"/>
+    </bean>
+    <bean id="student" class="com.java.map.Student">
+        <property name="id" value="10001"/>
+        <property name="name" value="Lucy"/>
+        <!--注入list、map类型属性-->
+        <property name="lessonList" ref="list"/>
+        <property name="teacherMap" ref="teacherMap"/>
+    </bean>
+    <util:list id="list">
+        <ref bean="lesson"/>
+        <ref bean="lesson1"/>
+    </util:list>
+    <util:map id="teacherMap">
+        <entry>
+            <key>
+                <value>1001</value>
+            </key>
+            <ref bean="teacher"/>
+        </entry>
+        <entry>
+            <key>
+                <value>1002</value>
+            </key>
+            <ref bean="teacher1"/>
+        </entry>
+    </util:map>
+    <!--p命名空间-->
+        <bean id="student1" class="com.java.map.Student" p:id="10002" p:name="mary" p:lessonList-ref="list" p:teacherMap-ref="teacherMap"/>
+</beans>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--1.set方法注入-->
+    <bean id="book" class="com.java.di.Book">
+        <property name="BookName" value="java面向对象"/>
+        <property name="author" value="程序员"/>
+        <!--表示传入空值-->
+<!--        <property name="others"><null/></property>-->
+        <!-- 小于号在XML文档中用来定义标签的开始，不能随便使用 -->
+        <!-- 解决方案一：使用XML实体来代替 -->
+<!--        <property name="others" value="a &lt; b"/>-->
+        <property name="others"><value><![CDATA[A<B]]></value></property>
+    </bean>
+    <!--2.构造器注入-->
+    <bean id="book1" class="com.java.di.Book">
+        <constructor-arg name="BookName" value="java面向对象"/>
+        <constructor-arg name="author" value="造梦师"/>
+    </bean>
+</beans>

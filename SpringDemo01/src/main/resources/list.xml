@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dept" class="com.java.ditest.Department">
+        <property name="name" value="技术部"/>
+        <property name="listEmp">
+            <list>
+                <ref bean="Emp1"/>
+                <ref bean="Emp2"/>
+            </list>
+        </property>
+    </bean>
+    <bean id="Emp1" class="com.java.ditest.Employee">
+        <property name="name" value="Lucy"/>
+        <property name="age" value="10"/>
+    </bean>
+    <bean id="Emp2" class="com.java.ditest.Employee">
+        <property name="name" value="Mary"/>
+        <property name="age" value="20"/>
+    </bean>
+</beans>

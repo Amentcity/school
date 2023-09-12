@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <bean id="dept" class="com.java.ditest.Department">
+            <property name="name" value="技术部"/>
+        </bean>
+        <!--数组类型属性-->
+        <bean id="emp" class="com.java.ditest.Employee">
+            <!--普通属性值-->
+            <property name="name" value="Lucy"/>
+            <property name="age" value="20"/>
+            <!--对象类型属性-->
+            <property name="department" ref="dept"/>
+            <!--数组类型属性-->
+            <property name="hobby">
+                <array>
+                    <value>吃饭</value>
+                    <value>睡觉</value>
+                    <value>敲代码</value>
+                </array>
+            </property>
+        </bean>
+</beans>

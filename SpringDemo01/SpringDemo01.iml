@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset" name="Book" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/book.xml</file>
+        </fileset>
+        <fileset id="fileset2" name="Bean" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/bean.xml</file>
+        </fileset>
+        <fileset id="fileset3" name="Ditest" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/ditest.xml</file>
+        </fileset>
+        <fileset id="fileset4" name="Di" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/di.xml</file>
+        </fileset>
+        <fileset id="fileset5" name="List" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/list.xml</file>
+        </fileset>
+        <fileset id="fileset6" name="Map" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/map.xml</file>
+        </fileset>
+        <fileset id="fileset7" name="Ref" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/ref.xml</file>
+        </fileset>
+        <fileset id="fileset8" name="Connect" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/connect.xml</file>
+        </fileset>
+        <fileset id="fileset9" name="Connection" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/connection.xml</file>
+        </fileset>
+        <fileset id="fileset10" name="Scope" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/scope.xml</file>
+        </fileset>
+        <fileset id="fileset11" name="Life" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/life.xml</file>
+        </fileset>
+        <fileset id="fileset12" name="Factorybean" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/factorybean.xml</file>
+        </fileset>
+        <fileset id="fileset13" name="Auto" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/auto.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
+  </component>
+</module>

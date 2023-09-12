@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="user" class="com.java.file.User" init-method="initMethod" destroy-method="destroyMethod">
+        <property name="name" value="luck"/>
+    </bean>
+    <!-- bean的后置处理器要放入IOC容器中才能生效 -->
+    <bean id="myBeanPost" class="com.java.file.MyBeanPost">
+
+    </bean>
+</beans>
